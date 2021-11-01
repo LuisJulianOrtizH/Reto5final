@@ -50,8 +50,8 @@ public class ServiciosBoat {
                 if(barco.getBrand()!=null){
                     e.get().setBrand(barco.getBrand());
                 }
-                if(barco.getRooms()!=null){
-                    e.get().setRooms(barco.getRooms());
+                if(barco.getModel()!=null){
+                    e.get().setModel(barco.getModel());
                 }
                 if(barco.getDescription()!=null){
                     e.get().setDescription(barco.getDescription());
@@ -70,9 +70,9 @@ public class ServiciosBoat {
     }
 
 
-    public boolean deleteCabin(int cabinId) {
-        Boolean aBoolean = getBarco(barcoId).map(cabin -> {
-            metodosCrud.delete(cabin);
+    public boolean deleteBarco(int barcoId) {
+        Boolean aBoolean = getBarco(barcoId).map(barco -> {
+            metodosCrud.delete(barco);
             return true;
         }).orElse(false);
         return aBoolean;

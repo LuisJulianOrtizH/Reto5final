@@ -55,6 +55,6 @@ public class ControladorBoat {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int barcoId) {
-        return servicio.deleteCabin(barcoId);
+        return servicio.deleteBarco(barcoId);
     } 
 }

@@ -26,7 +26,7 @@ public class Boat implements Serializable{
     private Integer id;
     private String name;
     private String brand;
-    private Integer rooms;
+    private Integer model;
     private String description;
     
     @ManyToOne
@@ -67,12 +67,12 @@ public class Boat implements Serializable{
         this.brand = brand;
     }
 
-    public Integer getRooms() {
-        return rooms;
+    public Integer getModel() {
+        return model;
     }
 
-    public void setRooms(Integer rooms) {
-        this.rooms = rooms;
+    public void setModel(Integer model) {
+        this.model = model;
     }
 
     public String getDescription() {

@@ -17,62 +17,62 @@ import org.springframework.stereotype.Service;
 public class ServiciosBoat {
      @Autowired
     private RepositorioBoat metodosCrud;
-    private int barcoId;
+    private int boatId;
 
     public List<Boat> getAll(){
         return metodosCrud.getAll();
     }
 
-    public Optional<Boat> getBarco(int barcoId) {
-        return metodosCrud.getBarco(barcoId);
+    public Optional<Boat> getBoat(int boatId) {
+        return metodosCrud.getBoat(boatId);
     }
 
-    public Boat save(Boat barco){
-        if(barco.getId()==null){
-            return metodosCrud.save(barco);
+    public Boat save(Boat boat){
+        if(boat.getId()==null){
+            return metodosCrud.save(boat);
         }else{
-            Optional<Boat> e=metodosCrud.getBarco(barco.getId());
+            Optional<Boat> e=metodosCrud.getBoat(boat.getId());
             if(e.isEmpty()){
-                return metodosCrud.save(barco);
+                return metodosCrud.save(boat);
             }else{
-                return barco;
+                return boat;
             }
         }
     }
 
-    public Boat update(Boat barco){
-        if(barco.getId()!=null){
-            Optional<Boat> e=metodosCrud.getBarco(barco.getId());
+    public Boat update(Boat boat){
+        if(boat.getId()!=null){
+            Optional<Boat> e=metodosCrud.getBoat(boat.getId());
             if(!e.isEmpty()){
-                if(barco.getName()!=null){
-                    e.get().setName(barco.getName());
+                if(boat.getName()!=null){
+                    e.get().setName(boat.getName());
                 }
-                if(barco.getBrand()!=null){
-                    e.get().setBrand(barco.getBrand());
+                if(boat.getBrand()!=null){
+                    e.get().setBrand(boat.getBrand());
                 }
-                if(barco.getModel()!=null){
-                    e.get().setModel(barco.getModel());
+                if(boat.getYear()!=null){
+                    e.get().setYear(boat.getYear());
                 }
-                if(barco.getDescription()!=null){
-                    e.get().setDescription(barco.getDescription());
+                if(boat.getDescription()!=null){
+                    e.get().setDescription(boat.getDescription());
                 }
-                if(barco.getCategory()!=null){
-                    e.get().setCategory(barco.getCategory());
+                if(boat.getCategory()!=null){
+                    e.get().setCategory(boat.getCategory());
                 }
                 metodosCrud.save(e.get());
                 return e.get();
             }else{
-                return barco;
+                return boat;
             }
         }else{
-            return barco;
+            return boat;
         }
     }
 
 
-    public boolean deleteBarco(int barcoId) {
-        Boolean aBoolean = getBarco(barcoId).map(barco -> {
-            metodosCrud.delete(barco);
+    public boolean deleteBoat(int boatId) {
+        Boolean aBoolean = getBoat(boatId).map(boat -> {
+            metodosCrud.delete(boat);
             return true;
         }).orElse(false);
         return aBoolean;

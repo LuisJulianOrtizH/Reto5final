@@ -23,15 +23,15 @@ public class RepositorioBoat {
         return (List<Boat>) crud.findAll();
     }
 
-    public Optional<Boat> getBarco(int id){
+    public Optional<Boat> getBoat(int id){
         return crud.findById(id);
     }
 
-    public Boat save(Boat barco){
-        return crud.save(barco);
+    public Boat save(Boat boat){
+        return crud.save(boat);
     }
-    public void delete(Boat barco){
-        crud.delete(barco);
+    public void delete(Boat boat){
+        crud.delete(boat);
     }
     
 }

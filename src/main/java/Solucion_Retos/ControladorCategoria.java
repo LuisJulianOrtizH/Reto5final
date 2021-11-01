@@ -37,8 +37,8 @@ public class ControladorCategoria {
     }
 
     @GetMapping("/{id}")
-    public Optional<Categoria> getCategoria(@PathVariable("id") int categoriaId) {
-        return servicio.getCategoria(categoriaId);
+    public Optional<Categoria> getCategoria(@PathVariable("id") int categoryId) {
+        return servicio.getCategoria(categoryId);
     }
 
     @PostMapping("/save")
@@ -54,8 +54,8 @@ public class ControladorCategoria {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("id") int categoriaId) {
-        return servicio.deletecategoria(categoriaId);
+    public boolean delete(@PathVariable("id") int categoryId) {
+        return servicio.deletecategoria(categoryId);
     }
     
 }

@@ -25,7 +25,7 @@ public class Mensaje implements Serializable {
     @ManyToOne
     @JoinColumn(name="id")
     @JsonIgnoreProperties({"messages", "client", "reservations"})
-    private Boat barco;
+    private Boat boat;
 
     @ManyToOne
     @JoinColumn(name="clientId")
@@ -48,12 +48,12 @@ public class Mensaje implements Serializable {
         this.messageText = messageText;
     }
 
-    public Boat getBarco() {
-        return barco;
+    public Boat getBoat() {
+        return boat;
     }
 
-    public void setBarco(Boat barco) {
-        this.barco = barco;
+    public void setBoat(Boat barco) {
+        this.boat = boat;
     }
 
     public Cliente getClient() {
